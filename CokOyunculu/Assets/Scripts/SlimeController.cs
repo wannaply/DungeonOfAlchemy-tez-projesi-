@@ -17,8 +17,7 @@ public class SlimeController : NetworkBehaviour {
     private bool isReloading;
     private GameObject thePlayer;
     private Vector3 moveDirection;
-    private bool chase;
-    private Vector3 chaser;
+ 
     
     
     // Use this for initialization
@@ -36,12 +35,10 @@ public class SlimeController : NetworkBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+      
         
 
-        if(chase)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, chaser, movespeed * Time.deltaTime);
-        }
+        
         
 
 
@@ -81,15 +78,14 @@ public class SlimeController : NetworkBehaviour {
 
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            chase = true;
-            chaser = collision.gameObject.transform.position;
+            transform.position = Vector2.MoveTowards(transform.position, collision.gameObject.transform.position, movespeed * Time.deltaTime);
+            
         }
     }
 
-
-
+    
 }

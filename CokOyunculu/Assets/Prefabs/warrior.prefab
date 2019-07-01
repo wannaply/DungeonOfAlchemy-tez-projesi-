@@ -261,10 +261,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f20e56b2b9cd64a855e1a71cc7737c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHp: 50
-  HpPool: 0
-  currentHp: 50
+  MaxHp: 600
+  currentHp: 600
   waitToReload: 0
+  isDead: 0
+  font: {fileID: 0}
+  aTexture: {fileID: 2800000, guid: 0c38a3bfe0d919946b5f933b16485160, type: 3}
 --- !u!114 &6048930530277023760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63706c5d6c8601b4e9e1311a190428f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yurumehizi: 5
+  yurumehizi: 6
   attackTime: 0.3
 --- !u!1 &3102451454056669999
 GameObject:
@@ -441,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747529498c35d314389acf72627f9433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 8
   damageBurst: {fileID: 1064082936688172, guid: 99a80834aab492c4393eb8fa9eafdb6f,
     type: 3}
   hitPoint: {fileID: 3102451453677755274}

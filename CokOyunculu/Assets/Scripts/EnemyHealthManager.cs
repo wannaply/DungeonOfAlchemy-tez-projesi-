@@ -6,7 +6,8 @@ using UnityEngine.Networking;
 public class EnemyHealthManager : NetworkBehaviour {
 
     public int MaxHp;
-    public int currentHp;
+    [SyncVar]public int currentHp;
+    
 
     // Use this for initialization
     void Start()
@@ -19,7 +20,7 @@ public class EnemyHealthManager : NetworkBehaviour {
     {
         if (currentHp <= 0)
         {
-            Destroy(gameObject);
+            CmdDestroyEnemy();
         }
 
     }
@@ -28,8 +29,9 @@ public class EnemyHealthManager : NetworkBehaviour {
     {
         currentHp -= damage;
     }
-    public void SetMaxHp()
+    [Command]
+    void CmdDestroyEnemy()
     {
-        currentHp = MaxHp;
+        Destroy(gameObject);
     }
 }
